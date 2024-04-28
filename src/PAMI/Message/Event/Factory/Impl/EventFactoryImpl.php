@@ -70,6 +70,7 @@ class EventFactoryImpl
             $parts[$i] = ucfirst($parts[$i]);
         }
         $name = implode('', $parts);
+        
         $className = '\\PAMI\\Message\\Event\\' . $name . 'Event';
         if (class_exists($className, true)) {
             return new $className($message);
